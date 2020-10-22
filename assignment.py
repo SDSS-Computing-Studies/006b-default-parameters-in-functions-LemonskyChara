@@ -7,7 +7,9 @@ def tempConversion(tem,by="C"):
         answer = (tem * 9/5) + 32
     if by == "F":
         answer = 5 * (tem - 32) / 9
+    answer = round(answer,1)
     return answer
+
 
 def factorPair(a, b):
     numlist = []
