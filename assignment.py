@@ -17,6 +17,26 @@ def factorPair(a, b):
     numlist.sort()
     return numlist
 
+def cosineLaw(q,w,e,oppositeSide=True):
+        if oppositeSide == True:
+                result = math.sqrt(q ** 2 + w ** 2 - 2 * q * w * math.cos(toRadians(e)))
+                return result
+        if oppositeSide == False:
+                a1 = 1
+                b1 = -2 * q * math.cos(toRadians(e))
+                c1 = q ** 2 - w ** 2 
+                if b1 ** 2 - 4 * a1 * c1 >= 0:
+                        x1,x2=quadratic(a1,b1,c1)
+                        x = solution(x1,x2)
+                        return x
+                else:
+                        a1 = 1
+                        b1 = -2 * w * math.cos(toRadians(e))
+                        c1 = w ** 2 - q ** 2
+                        x1,x2=quadratic(a1,b1,c1)
+                        x = solution(x1,x2)
+                        return x
+
 def toRadians(degree):
     resultt = math.pi / 180 * degree
     return resultt
@@ -37,25 +57,6 @@ def quadratic(d,f,g):
     return i,n
 
 
-def cosineLaw(q,w,e,oppositeSide=True):
-        if oppositeSide == True:
-                result = math.sqrt(q ** 2 + w ** 2 - 2 * q * w * math.cos(toRadians(e)))
-                return result
-        if oppositeSide == False:
-                a1 = 1
-                b1 = -2 * q * math.cos(toRadians(e))
-                c1 = q ** 2 - w ** 2 
-                if b1 ** 2 - 4 * a1 * c1 >= 0:
-                        x1,x2=quadratic(a1,b1,c1)
-                        x = solution(x1,x2)
-                        return x
-                else:
-                        a1 = 1
-                        b1 = -2 * w * math.cos(toRadians(e))
-                        c1 = w ** 2 - q ** 2
-                        x1,x2=quadratic(a1,b1,c1)
-                        x = solution(x1,x2)
-                        return x
 
 
 
