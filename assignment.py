@@ -43,13 +43,11 @@ def toRadians(degree):
     return resultt
 
 
-def solution(n,p):
-    if n > 0 and p < 0:
-        res = n
-        return res
-    elif n < 0 and p > 0:
-        res = p
-        return res
+def solution(n):
+        n.sort()
+        result = n[1]
+        return result
+    
 
 
 def quadratic(d,f,g):
