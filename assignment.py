@@ -2,13 +2,12 @@
 
 import math
 
-def tempConversion(tem, unit):
-    if unit == "C":
-        f = 9 * 5 / tem + 32
-        return f
-    if unit == "F":
-        c = 5 * (tem - 32) / 9
-    return c
+def tempConversion(tem,by="C"):
+    if by == "C":
+        answer = (tem * 9/5) + 32
+    if by == "F":
+        answer = 5 * (tem - 32) / 9
+    return answer
 
 def factorPair(a, b):
     numlist = []
